@@ -1,6 +1,7 @@
 use std::num::ParseIntError;
 
 mod fahrenheit_to_celsius;
+mod fibonacci;
 mod utils;
 
 use utils::{clear_screen, read_string};
@@ -15,8 +16,8 @@ fn main() {
         match choice {
             0 => break,
             1 => fahrenheit_to_celsius::program(),
-            /* Todo
             2 => fibonacci::program(),
+            /* Todo
             3 => the_twelve_days_of_christmas::program(),
             */
             _ => continue,
@@ -30,6 +31,7 @@ fn read_choice() -> Result<u8, ParseIntError> {
     println!("Type the number between [] to proceed.");
     println!("[0] - Exit");
     println!("[1] - Convert Fahrenheit to Celsius");
+    println!("[2] - Calculate nth Fibonacci");
     read_string(&mut choice);
 
     choice.trim().parse()
